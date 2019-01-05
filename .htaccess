@@ -1,0 +1,7 @@
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+RewriteBase /
+
+# Make sure that all except public will result in 403
+RewriteRule ^(nbproject|secret|src|tests|vendor|.git|.gitignore|README.MD|composer.json|composer.lock)(/.*|)$ - [NC,F]
