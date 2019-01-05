@@ -30,8 +30,10 @@ class AppInit {
         define("WWW_ROOT", $doc_root);
 
         // Start session
-
         session_start();
+        
+        // Initialize output buffer
+        ob_start(); 
 
         echo "initialized" . BR;
     }
