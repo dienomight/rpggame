@@ -40,13 +40,13 @@ class AppInit {
 
     private static function autoload() {
         
-        // load all classes of rpggame namespace
+        // Load all classes of rpggame namespace
         spl_autoload_register(function($class_name) {
             require_once SRC . str_replace(['rpggame', '\\'], ['', ''], $class_name) . '.php';
             var_dump($class_name);
         });
         
-        // include the composer autoloader
+        // Include the composer autoloader
         require ROOT . 'vendor/autoload.php';
         echo "autoloaded" . BR;
     }

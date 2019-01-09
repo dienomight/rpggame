@@ -20,7 +20,8 @@ if (!empty($qs)) {
 $req = str_replace(WWW_ROOT, '', $req);
 
 // if there is no action passed in qs default will be 'index'
-$action = isset($_GET['action']) ? $_GET['action'] : 'index';
+$action = $_GET['action'] ?? 'index';
+echo "ACTION: " . $action . BR;
 switch ($req) {
     case('/login'):
         $controller = new Controllers\LoginController();

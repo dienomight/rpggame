@@ -4,6 +4,11 @@
  *
  * @author TB
  */
+
+use rpggame\Util;
+
+$errors = $errors ?? null;
+$login = $_POST['login'] ?? '';
 ?>
 <!doctype html>
 
@@ -14,13 +19,13 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form method="POST" action="index.php?action=verify">
+        <?= Util::displayErrors($errors); ?>
+        <form method="POST" action="<?= WWW_ROOT ?>/login?action=verify">
             Login<br/>
-            <input type="text" name="login" /><br/>
+            <input type="text" name="login" value="<?= $login?>"/><br/>
             Password<br/>
             <input type="password" name="password" /><br/>
             <input type="submit" name="submit" value="Log In" />
-
         </form>
     </body>
 </html>
